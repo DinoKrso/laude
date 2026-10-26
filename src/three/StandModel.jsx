@@ -136,16 +136,16 @@ export default function StandModel({ onReady, onVariant, shadows = true }) {
       if (wanted.cycle) {
         // hero: every few seconds turn into the next colour/shape
         v.timer += Math.min(dt, 0.2)
-        if (v.timer > 3.2) { v.timer = 0; v.t = 0; v.next = (v.index + 1) % VARIANTS.length }
+        if (v.timer > 3.2) { v.timer = 0; v.t = 0; v.dur = 0.95; v.next = (v.index + 1) % VARIANTS.length }
       } else if (wanted.variant !== v.index) {
-        v.timer = 0; v.t = 0; v.next = wanted.variant // scrolled on: go back to the real model
+        v.timer = 0; v.t = 0; v.dur = 1.3; v.next = wanted.variant // scrolled on: calmer turn back to the real model
       }
     }
     if (v.t >= 0) {
       const prev = v.t
-      v.t = Math.min(1, v.t + Math.min(dt, 0.2) / 0.95) // real time, so slow devices don't drag the turn out
+      v.t = Math.min(1, v.t + Math.min(dt, 0.2) / (v.dur || 0.95)) // real time, so slow devices don't drag the turn out
       if (prev < 0.25 && v.t >= 0.25) { v.index = v.next; applyVariant(v.index) }
-      const e = v.t < 0.5 ? 4 * v.t ** 3 : 1 - (-2 * v.t + 2) ** 3 / 2
+      const e = v.dur > 1 ? 0.5 - Math.cos(Math.PI * v.t) / 2 : v.t < 0.5 ? 4 * v.t ** 3 : 1 - (-2 * v.t + 2) ** 3 / 2
       v.angle = e * Math.PI * 2
       if (v.t >= 1) { v.t = -1; v.angle = 0 }
     }

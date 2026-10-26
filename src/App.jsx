@@ -23,6 +23,7 @@ export default function App() {
       // keep the page still behind the loader
       if (!window.__preloader?.finished) { lenis.stop(); window.addEventListener('preloader:done', () => lenis?.start(), { once: true }) }
       lenis.on('scroll', ScrollTrigger.update)
+      window.__lenis = lenis // the 3D story snaps to its chapters through Lenis
       raf = (time) => lenis.raf(time * 1000)
       gsap.ticker.add(raf)
       gsap.ticker.lagSmoothing(0)
@@ -46,7 +47,7 @@ export default function App() {
         gsap.from(el, { y: 36, opacity: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } })
       })
     })
-    return () => { document.removeEventListener('click', onClick); if (raf) gsap.ticker.remove(raf); lenis?.destroy(); ctx.revert() }
+    return () => { document.removeEventListener('click', onClick); if (raf) gsap.ticker.remove(raf); lenis?.destroy(); window.__lenis = null; ctx.revert() }
   }, [])
 
   return (
