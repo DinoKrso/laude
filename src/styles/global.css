@@ -1,0 +1,180 @@
+/* Laude - one pinned 3D stage tells the product story, then calm editorial sections. */
+:root{
+  /* Laude brand: logo blue on a cool near-black; gold kept only for review stars */
+  --bg:#0a0b0e;
+  --bg-2:#111319;
+  --surface:#161921;
+  --line:#23262e;
+  --fg:#f2f4f8;
+  --muted:#a3aab8;
+  --faint:#6f7685;
+  --accent:#1f6bff;          /* logo blue */
+  --accent-2:#19b4ff;        /* logo light blue */
+  --accent-deep:#1a2be0;     /* logo deep blue */
+  --accent-ink:#ffffff;
+  --gold:#f2b544;            /* the five stars */
+  --f-display:"Sora","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Sora","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --step--1:clamp(.82rem,.78rem + .2vw,.9rem);
+  --step-0:clamp(1rem,.95rem + .25vw,1.12rem);
+  --step-1:clamp(1.2rem,1.05rem + .7vw,1.55rem);
+  --step-3:clamp(2rem,1.3rem + 3.1vw,4rem);
+  --step-4:clamp(2.5rem,1.5rem + 4.6vw,5.6rem);
+  --radius:14px;
+  --gutter-l:max(16px,env(safe-area-inset-left,0px));
+  --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:var(--step-0);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.035em;line-height:1.04;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2)}
+.mono{font-family:var(--f-mono);font-size:var(--step--1);color:var(--faint);letter-spacing:.02em}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+
+/* NAV */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.nav-in{max-width:1180px;margin:12px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:999px;background:color-mix(in oklab,var(--bg) 70%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px);border:1px solid color-mix(in oklab,var(--line) 70%,transparent)}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:26px;width:auto;display:block}
+.nav-links{display:flex;gap:22px;font-size:var(--step--1);color:var(--muted)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:.78em 1.3em;border-radius:999px;font:600 var(--step--1)/1 var(--f-body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{border:0;padding:calc(.78em + 1px) calc(1.3em + 1px);background:linear-gradient(135deg,var(--accent-2),var(--accent) 55%,var(--accent-deep));background-origin:border-box;color:var(--accent-ink);box-shadow:0 6px 24px -10px color-mix(in oklab,var(--accent) 80%,transparent)}
+.btn-ghost{border-color:var(--line);color:var(--fg);background:transparent}
+@media (max-width:720px){.nav-links{display:none}}
+
+/* STORY - stacked and readable by default, .pinned turns it into the 3D stage */
+.story{position:relative}
+.stage{position:relative}
+.chapters{display:grid;gap:64px;padding-block:120px 80px}
+.chapter{max-width:560px}
+.chapter h1{font-size:var(--step-4)}
+.chapter h2{font-size:var(--step-3)}
+.chapter .lead{margin-top:20px;color:var(--muted);font-size:var(--step-1);line-height:1.45;max-width:30ch}
+.chapter .body{margin-top:18px;color:var(--muted);max-width:42ch}
+.chapter .spec{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--f-mono);font-size:.78rem;padding:.45em .8em;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:color-mix(in oklab,var(--surface) 60%,transparent)}
+.chip b{color:var(--fg);font-weight:500}
+.hero-ctas{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.stars{display:flex;gap:4px;margin-bottom:22px}
+.stars i{width:18px;height:18px;background:var(--gold);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+
+.story.pinned{height:820vh}
+.pinned .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+/* Two fixed zones: text column and model column. They share one centred grid, so they can never overlap at any width. */
+.pinned .stage-grid{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(16px,3vw,56px);padding-left:max(var(--gutter-l),calc((100vw - 1180px)/2 + 18px));padding-right:calc(var(--gutter-r) + 28px);padding-top:84px}
+.pinned .text-col{position:relative;min-width:0}
+.pinned .chapters{position:absolute;inset:0;display:block;padding:0;max-width:none;margin:0;pointer-events:none}
+.pinned .chapter{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);max-width:520px;pointer-events:auto}
+.pinned .chapter h1{font-size:clamp(2.2rem,.9rem + 3vw,4.6rem)}
+.pinned .chapter h2{font-size:clamp(1.75rem,.85rem + 2vw,3.3rem)}
+.pinned .chapter[data-i="0"] .lead{max-width:26ch}
+.pinned .canvas-col{position:relative;min-width:0}
+.pinned .canvas-wrap{position:absolute;inset:0}
+.progress{position:absolute;right:var(--gutter-r);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:3}
+.progress span{display:block;width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s}
+.progress span.on{background:var(--accent-2);transform:scale(1.5)}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.loading{position:absolute;right:24px;bottom:24px;font-family:var(--f-mono);font-size:.75rem;color:var(--faint)}
+
+/* Phones and portrait tablets: model on top, text below, again as two separate rows */
+@media (max-width:900px), (max-aspect-ratio:1/1){
+  .pinned .stage-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;padding-right:var(--gutter-r);padding-top:calc(76px + env(safe-area-inset-top,0px));padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));row-gap:8px}
+  .pinned .canvas-col{grid-row:1;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 86%,transparent 100%)}
+  .pinned .text-col{grid-row:2;height:var(--text-h,44svh)}
+  .pinned .chapters{inset:auto 0 0 0;height:100%}
+  .pinned .chapter{top:0;bottom:auto;transform:none;max-width:640px}
+  .pinned .chapter h1{font-size:clamp(1.75rem,7.4vw,3rem)}
+  .pinned .chapter h2{font-size:clamp(1.4rem,6vw,2.4rem)}
+  .pinned .chapter .lead{font-size:clamp(.95rem,3.8vw,1.2rem);margin-top:10px;max-width:none}
+  .pinned .chapter .body{font-size:clamp(.9rem,3.6vw,1.05rem);margin-top:8px;max-width:none}
+  .pinned .chapter .spec{margin-top:10px}
+  .pinned .hero-ctas{margin-top:14px}
+  .pinned .stars{margin-bottom:10px}
+  .progress{top:calc(92px + env(safe-area-inset-top,0px));transform:none}
+  }
+@media ((max-width:900px) or (max-aspect-ratio:1/1)) and (max-height:700px){
+  .pinned .chapter .spec{display:none}
+  .pinned .stars{display:none}
+}
+
+/* SECTIONS */
+section.band{padding-block:clamp(80px,12vw,150px);border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:16px;max-width:760px;margin-bottom:clamp(36px,6vw,64px)}
+.sec-head h2{font-size:var(--step-3)}
+.sec-head .sec-text{color:var(--muted);font-size:var(--step-1);max-width:46ch}
+
+.venues{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.venue{background:var(--bg);padding:28px 24px 30px;display:grid;grid-template-rows:auto auto 1fr auto;gap:12px;min-width:0}
+.venue svg{color:var(--accent-2)}
+.venue h3{font-size:var(--step-1);letter-spacing:-.01em}
+.venue p{color:var(--muted);font-size:.96rem}
+@media (max-width:960px){.venues{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.venues{grid-template-columns:1fr}}
+
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);counter-reset:s}
+.step{display:grid;gap:12px;align-content:start;padding-top:22px;border-top:1px solid var(--line);min-width:0}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-mono);font-size:.8rem;color:var(--accent-2)}
+.step h3{font-size:var(--step-1)}
+.step p{color:var(--muted)}
+@media (max-width:800px){.steps{grid-template-columns:1fr}}
+
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,72px);align-items:start}
+.contact h2{font-size:var(--step-3)}
+.contact .side>p:not(.eyebrow){color:var(--muted);margin-top:18px;max-width:40ch}
+.contact .side h2{margin-top:16px}
+.contact-lines{margin-top:28px;display:grid;gap:10px}
+.contact-lines div{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.contact-lines .mono{min-width:110px}
+.contact-lines a{text-decoration:underline;text-underline-offset:.22em;text-decoration-color:color-mix(in oklab,var(--muted) 55%,transparent)}
+.contact-lines a:hover{color:var(--fg)}
+.contact-lines .missing{color:var(--faint);font-style:italic}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+form{position:relative;display:grid;gap:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,32px)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:var(--step--1);color:var(--muted)}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.75em .85em;width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+.form-note{font-size:.85rem;color:var(--faint)}
+.sent{display:grid;align-content:center;gap:14px;min-height:320px;padding:8px 4px 12px}
+.sent .btn{justify-self:start}
+.sent h3{font-size:clamp(1.7rem,1.2rem + 1.2vw,2.15rem)}
+.sent p:not(.eyebrow){color:var(--muted);max-width:34ch}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.btn:disabled{opacity:.6;cursor:default;transform:none}
+.result{display:grid;gap:12px;border:1px dashed var(--accent);border-radius:12px;padding:16px;background:color-mix(in oklab,var(--accent) 7%,var(--bg))}
+.result pre{margin:0;white-space:pre-wrap;font:400 .9rem/1.5 var(--f-mono);color:var(--fg)}
+.result .acts{display:flex;flex-wrap:wrap;gap:10px}
+
+footer{border-top:1px solid var(--line);padding-block:36px calc(36px + env(safe-area-inset-bottom,0px));color:var(--faint);font-size:var(--step--1)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+
+/* Touch devices: no live blur behind the nav (it re-composites over WebGL every frame) */
+@media (hover:none),(pointer:coarse){
+  .nav-in{backdrop-filter:none;-webkit-backdrop-filter:none;background:color-mix(in oklab,var(--bg) 92%,transparent)}
+}
+.pinned .stage{contain:layout paint}
+.canvas-wrap canvas{touch-action:pan-y}
+
+/* 3D model fades in under the page loader */
+.pinned .canvas-wrap{opacity:0;transition:opacity .9s ease .1s}
+.pinned .canvas-wrap.is-ready{opacity:1}
+
+/* until the scroll story is wired up, only the first chapter is visible */
+.pinned .chapter:not([data-i="0"]){opacity:0;visibility:hidden}
+

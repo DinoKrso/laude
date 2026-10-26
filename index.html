@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="bs" class="is-loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0b0e" />
+    <link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="brand/apple-touch-icon.png" />
+    <title>Laude - stalci za Google recenzije, Sarajevo</title>
+    <meta name="description" content="Laude pravi stalke za Google recenzije s vašim logom, QR kodom i NFC čipom. Za kafiće, restorane, hotele i salone u Sarajevu." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Laude" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="bs_BA" />
+    <meta property="og:site_name" content="Laude" />
+    <meta property="og:title" content="Laude - stalci za Google recenzije, Sarajevo" />
+    <meta property="og:description" content="Stalak s vašim logom, QR kodom i NFC čipom. Gost prisloni telefon i forma za recenziju je već otvorena." />
+    <meta property="og:image" content="brand/laude-logo-web.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Laude - stalci za Google recenzije, Sarajevo" />
+    <meta name="twitter:description" content="Stalak s vašim logom, QR kodom i NFC čipom. Gost prisloni telefon i forma za recenziju je već otvorena." />
+    <meta name="twitter:image" content="brand/laude-logo-web.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Laude",
+            "description": "Stalci za Google recenzije s logom lokala, QR kodom i NFC čipom.",
+            "email": "podrska.laude@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sarajevo",
+              "addressCountry": "BA"
+            },
+            "areaServed": "Bosna i Hercegovina",
+            "sameAs": ["https://www.instagram.com/laude.bih/"]
+          },
+          {
+            "@type": "Product",
+            "name": "Laude stalak za Google recenzije",
+            "description": "Stalak s vašim logom, QR kodom i NFC čipom. Gost prisloni telefon i forma za recenziju je otvorena.",
+            "brand": { "@type": "Brand", "name": "Laude" },
+            "category": "Stalak za Google recenzije"
+          }
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+    <link rel="preload" href="brand/laude-logo-web.png" as="image" />
+    <link rel="preload" href="stand.glb" as="fetch" type="model/gltf-binary" crossorigin />
+    <style>
+      /* Page preloader: painted before any JS, removed when fonts, app and 3D model are ready */
+      html,body{background:#0a0b0e;margin:0}
+      noscript main{max-width:40rem;margin:4rem auto;padding:0 1.25rem;color:#f2f4f8;font-family:system-ui,sans-serif;line-height:1.5}
+      noscript a{color:#19b4ff}
+      html.is-loading,html.is-loading body{overflow:hidden;height:100%}
+      #preloader{position:fixed;inset:0;z-index:1000;display:grid;place-content:center;justify-items:center;gap:22px;background:#0a0b0e;color:#f2f4f8;transition:opacity .6s ease .1s,visibility 0s linear .7s}
+      #preloader.is-done{opacity:0;visibility:hidden}
+      #preloader svg{width:84px;height:120px;overflow:visible}
+      #preloader .pl-line{fill:none;stroke:#23262e;stroke-width:2}
+      #preloader .pl-fill{fill:rgba(31,107,255,.28);transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--p,.06));transition:transform .45s ease}
+      #preloader .pl-star{fill:#19b4ff;animation:pl-pulse 1.4s ease-in-out infinite}
+      #preloader .pl-brand{height:30px;width:auto;display:block}
+      #preloader .pl-bar{width:160px;height:2px;background:#23262e;border-radius:2px;overflow:hidden}
+      #preloader .pl-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#1a2be0,#19b4ff);transform-origin:left;transform:scaleX(var(--p,.06));transition:transform .45s ease}
+      #preloader .pl-text{font:400 .75rem/1 "IBM Plex Mono",ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#6f7685;font-variant-numeric:tabular-nums;min-height:1em}
+      #preloader.is-done .pl-star{animation:none}
+      @keyframes pl-pulse{50%{opacity:.35}}
+      @media (prefers-reduced-motion:reduce){#preloader .pl-star{animation:none}#preloader,#preloader *{transition:none!important}}
+    </style>
+  </head>
+  <body>
+    <div id="preloader" role="status" aria-live="polite">
+      <svg viewBox="0 0 120 170" aria-hidden="true">
+        <defs><clipPath id="pl-clip"><rect x="25" y="8" width="70" height="128" rx="7" transform="rotate(4 60 72)" /></clipPath></defs>
+        <g clip-path="url(#pl-clip)"><rect class="pl-fill" x="0" y="0" width="120" height="140" /></g>
+        <rect class="pl-line" x="25" y="8" width="70" height="128" rx="7" transform="rotate(4 60 72)" />
+        <rect class="pl-line" x="12" y="140" width="96" height="16" rx="5" />
+        <path class="pl-star" d="M60 46l3.2 6.6 7.2.9-5.3 5 1.4 7.1L60 62.1l-6.5 3.5 1.4-7.1-5.3-5 7.2-.9z" />
+      </svg>
+      <img class="pl-brand" src="brand/laude-logo-web.png" alt="Laude" width="107" height="30" />
+      <div class="pl-bar"><i></i></div>
+      <div class="pl-text">Učitavam…</div>
+    </div>
+    <script>
+      // Tiny controller the app reports to: progress(0-100) while loading, done() when the page is ready.
+      (function () {
+        var el = document.getElementById('preloader'), txt = el.querySelector('.pl-text'), shown = 6, finished = false
+        function set(p) { shown = Math.max(shown, Math.min(100, p)); el.style.setProperty('--p', (shown / 100).toFixed(3)); txt.textContent = shown >= 100 ? 'Spremno' : 'Učitavam · ' + Math.round(shown) + '%' }
+        function done() {
+          if (finished) return; finished = true; set(100)
+          setTimeout(function () {
+            el.classList.add('is-done'); document.documentElement.classList.remove('is-loading')
+            window.dispatchEvent(new Event('preloader:done'))
+            setTimeout(function () { el.remove() }, 900)
+          }, 180)
+        }
+        window.__preloader = { progress: set, done: done, get finished() { return finished } }
+        // never trap visitors behind the loader
+        setTimeout(done, 15000)
+      })()
+    </script>
+    <noscript>
+      <main>
+        <h1>Jedan dodir. Pet zvjezdica.</h1>
+        <p>Stalak za Google recenzije s vašim logom, QR kodom i NFC čipom. Gost prisloni telefon i forma za recenziju je već otvorena. Za kafiće, restorane, hotele i salone u Sarajevu.</p>
+        <h2>Kako radi</h2>
+        <p>Pošaljete logo i link do Google profila, odobrite dizajn, a mi izradimo stalak i dostavimo ga spremnog za sto.</p>
+        <h2>Ponuda</h2>
+        <p>E-mail: <a href="mailto:podrska.laude@gmail.com">podrska.laude@gmail.com</a>. Instagram: <a href="https://www.instagram.com/laude.bih/">@laude.bih</a>.</p>
+      </main>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
